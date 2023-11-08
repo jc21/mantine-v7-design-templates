@@ -1,0 +1,65 @@
+.wrapper {
+	position: relative;
+	padding-top: 120px;
+	padding-bottom: 80px;
+
+	@media (max-width: 755px) {
+		padding-top: 80px;
+		padding-bottom: 60px;
+	}
+}
+
+.inner {
+	position: relative;
+	z-index: 1;
+}
+
+.title {
+	text-align: center;
+	font-weight: 800px;
+	font-size: 40px;
+	letter-spacing: -1;
+	color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+	margin-bottom: var(--mantine-spacing-xs);
+	font-family: "Greycliff CF", var(--mantine-font-family);
+
+	@media (max-width: 520px) {
+		font-size: 28;
+		text-align: left;
+	}
+}
+
+.description {
+	text-align: center;
+
+	@media (max-width: 520px) {
+		text-align: left;
+		font-size: var(--mantine-font-size-md);
+	}
+}
+
+.children {
+	margin-top: var(--mantine-spacing-lg);
+	display: flex;
+	justify-content: center;
+
+	@media (max-width: 520px) {
+		flex-direction: column;
+	}
+
+	button {
+		&:not(:first-of-type) {
+			margin-left: var(--mantine-spacing-md);
+		}
+
+		@media (max-width: 520px) {
+			height: 42;
+			font-size: var(--mantine-font-size-md);
+
+			&:not(:first-of-type) {
+				margin-top: var(--mantine-spacing-md);
+				margin-left: 0;
+			}
+		}
+	}
+}
