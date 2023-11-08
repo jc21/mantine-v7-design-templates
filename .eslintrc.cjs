@@ -47,19 +47,6 @@ module.exports = {
     "@typescript-eslint/no-empty-function": ["off"],
     "@typescript-eslint/no-explicit-any": ["off"],
     "@typescript-eslint/no-non-null-assertion": ["off"],
-    "@typescript-eslint/naming-convention": [
-      "error",
-      {
-        selector: "default",
-        format: ["camelCase", "PascalCase", "UPPER_CASE"],
-        leadingUnderscore: "allow",
-        trailingUnderscore: "allow",
-        filter: {
-          regex: "^(2xl)$",
-          match: false,
-        },
-      },
-    ],
     "react-hooks/rules-of-hooks": ["error"],
     "react-hooks/exhaustive-deps": [
       "warn",
