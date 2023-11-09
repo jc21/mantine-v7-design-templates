@@ -1,20 +1,39 @@
 import { lazy, Suspense } from "react";
 
-import { Loader } from "@mantine/core";
+import { Center, Container, Loader } from "@mantine/core";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const Home = lazy(() => import("./pages/home"));
+import { SiteHeader } from "src/components";
+
+const Cards = lazy(() => import("./pages/Cards"));
+const Lists = lazy(() => import("./pages/Lists"));
+const Forms = lazy(() => import("./pages/Forms"));
+const Home = lazy(() => import("./pages/Home"));
+const Menus = lazy(() => import("./pages/Menus"));
 
 function Router() {
-	return (
-		<BrowserRouter>
-			<Suspense fallback={<Loader />}>
-				<Routes>
-					<Route path="/" element={<Home />} />
-				</Routes>
-			</Suspense>
-		</BrowserRouter>
-	);
+  const Load = (
+    <Center mt={10} pt={50}>
+      <Loader />
+    </Center>
+  );
+
+  return (
+    <BrowserRouter>
+      <SiteHeader />
+      <Container size="md">
+        <Suspense fallback={Load}>
+          <Routes>
+            <Route path="/cards" element={<Cards />} />
+            <Route path="/forms" element={<Forms />} />
+            <Route path="/lists" element={<Lists />} />
+            <Route path="/menus" element={<Menus />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </Suspense>
+      </Container>
+    </BrowserRouter>
+  );
 }
 
 export default Router;
