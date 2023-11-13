@@ -1,0 +1,45 @@
+pipeline {
+	agent {
+		label 'docker-multiarch'
+	}
+	options {
+		buildDiscarder(logRotator(numToKeepStr: '5'))
+		disableConcurrentBuilds()
+		ansiColor('xterm')
+	}
+	environment {
+		DOCS_BUCKET = 'jc21-mantine'
+		DOCS_CDN    = 'E3MR66E0GZB3RB'
+	}
+	stages {
+		stage('Build') {
+			steps {
+				sh 'docker run --rm -v "$(pwd):/app" -w /app node:18 yarn install'
+				sh 'docker run --rm -v "$(pwd):/app" -w /app node:18 yarn lint'
+				sh 'docker run --rm -v "$(pwd):/app" -w /app node:18 yarn build'
+			}
+		}
+		stage('Deploy') {
+			when {
+				branch 'main'
+			}
+			steps {
+				mantineRelease("$DOCS_BUCKET", "$DOCS_CDN")
+			}
+		}
+	}
+	post {
+		always {
+			sh 'echo Reverting ownership'
+			sh 'docker run --rm -v "$(pwd):/app" jc21/ci-tools chown -R "$(id -u):$(id -g)" /app'
+		}
+		success {
+			juxtapose event: 'success'
+			sh 'figlet "SUCCESS"'
+		}
+		failure {
+			juxtapose event: 'failure'
+			sh 'figlet "FAILURE"'
+		}
+	}
+}
