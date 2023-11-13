@@ -49,16 +49,11 @@
   position: relative;
   font-weight: bold;
   font-size: var(--mantine-font-size-xs);
-  border-bottom: light-dark(
-    calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-gray-2),
-    calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-dark-4)
-  );
-  border-right: light-dark(
-    calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-gray-2),
-    calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-dark-4)
-  );
+  border: rem(1px) solid
+    light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  border-width: 0 rem(1px) rem(1px) 0;
   background-color: light-dark(
-    var(--mantine-color-white),
+    var(--mantine-color-gray-0),
     var(--mantine-color-dark-9)
   );
   border-radius: 0;
