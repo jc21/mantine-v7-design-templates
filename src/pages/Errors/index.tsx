@@ -1,13 +1,13 @@
 import { Title } from "@mantine/core";
 
-import { Example } from "src/components";
+import { Example, ExampleItem } from "src/components";
 import { NotFound } from "src/examples/ErrorPages/NotFound";
 import { NotFoundBackground } from "src/examples/ErrorPages/NotFoundBackground";
 import { NotFoundImage } from "src/examples/ErrorPages/NotFoundImage";
 import { ServerError } from "src/examples/ErrorPages/ServerError";
 import { ServerOverload } from "src/examples/ErrorPages/ServerOverload";
 
-const items = [
+const items: ExampleItem[] = [
   {
     title: "404 Page with Image",
     component: <NotFoundImage />,
@@ -18,6 +18,7 @@ const items = [
       await import("src/examples/ErrorPages/NotFoundImage.module.css?raw")
     ).default,
     sourceCssFilename: "NotFoundImage.module.css",
+    isMantineUI: true,
   },
   {
     title: "404 Page",
@@ -27,6 +28,7 @@ const items = [
     sourceCss: (await import("src/examples/ErrorPages/NotFound.module.css?raw"))
       .default,
     sourceCssFilename: "NotFound.module.css",
+    isMantineUI: true,
   },
   {
     title: "404 as background image",
@@ -38,6 +40,7 @@ const items = [
       await import("src/examples/ErrorPages/NotFoundBackground.module.css?raw")
     ).default,
     sourceCssFilename: "NotFoundBackground.module.css",
+    isMantineUI: true,
   },
   {
     title: "500 Page",
@@ -49,6 +52,7 @@ const items = [
       await import("src/examples/ErrorPages/ServerError.module.css?raw")
     ).default,
     sourceCssFilename: "ServerError.module.css",
+    isMantineUI: true,
   },
   {
     title: "503 Page",
@@ -60,6 +64,7 @@ const items = [
       await import("src/examples/ErrorPages/ServerOverload.module.css?raw")
     ).default,
     sourceCssFilename: "ServerOverload.module.css",
+    isMantineUI: true,
   },
 ];
 

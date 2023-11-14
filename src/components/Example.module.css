@@ -25,6 +25,10 @@
   border-radius: 0 0 var(--mantine-radius-md) var(--mantine-radius-md);
 }
 
+.clickable {
+  cursor: pointer !important;
+}
+
 .roundbottom {
   border-radius: 0 0 var(--mantine-radius-md) var(--mantine-radius-md);
 }

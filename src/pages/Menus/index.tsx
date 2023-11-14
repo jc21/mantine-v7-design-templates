@@ -1,9 +1,9 @@
 import { Title } from "@mantine/core";
 
-import { Example } from "src/components";
+import { Example, ExampleItem } from "src/components";
 import { Hero } from "src/examples/Hero";
 
-const items = [
+const items: ExampleItem[] = [
   {
     title: "Hero",
     component: <Hero />,

@@ -2,6 +2,7 @@ import { useState, ReactNode } from "react";
 
 import { CodeHighlight } from "@mantine/code-highlight";
 import {
+  Badge,
   Box,
   Center,
   Group,
@@ -10,7 +11,7 @@ import {
   Text,
   rem,
 } from "@mantine/core";
-import { FiCode, FiEye, FiHash } from "react-icons/fi";
+import { FiCode, FiEye, FiExternalLink, FiHash } from "react-icons/fi";
 
 import classes from "./Example.module.css";
 
@@ -21,6 +22,7 @@ export interface ExampleItem {
   sourceFilename: string;
   sourceCss?: string;
   sourceCssFilename?: string;
+  isMantineUI?: boolean;
 }
 
 interface Props {
@@ -35,7 +37,20 @@ function Example({ item }: Props) {
   return (
     <Box my="xl" className={classes.wrapper}>
       <Group justify="space-between" p="xs" className={classes.header}>
-        <Text size="lg">{item.title}</Text>
+        <Group>
+          <Text size="lg">{item.title}</Text>
+          {item.isMantineUI ? (
+            <Badge
+              className={classes.clickable}
+              color="cyan"
+              rightSection={<FiExternalLink />}
+              onClick={() => {
+                window.open("https://ui.mantine.dev", "_blank")?.focus();
+              }}>
+              Mantine UI
+            </Badge>
+          ) : null}
+        </Group>
         <SegmentedControl
           value={value}
           onChange={setValue}
