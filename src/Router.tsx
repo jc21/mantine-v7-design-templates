@@ -10,6 +10,7 @@ const Lists = lazy(() => import("./pages/Lists"));
 const Forms = lazy(() => import("./pages/Forms"));
 const Home = lazy(() => import("./pages/Home"));
 const Menus = lazy(() => import("./pages/Menus"));
+const Errors = lazy(() => import("./pages/Errors"));
 
 function Router() {
   const Load = (
@@ -21,13 +22,14 @@ function Router() {
   return (
     <BrowserRouter>
       <SiteHeader />
-      <Container size="md">
+      <Container size="lg">
         <Suspense fallback={Load}>
           <Routes>
             <Route path="/cards" element={<Cards />} />
             <Route path="/forms" element={<Forms />} />
             <Route path="/lists" element={<Lists />} />
             <Route path="/menus" element={<Menus />} />
+            <Route path="/errors" element={<Errors />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </Suspense>

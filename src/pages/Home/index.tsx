@@ -7,12 +7,15 @@ function Home() {
     <Container py="md">
       <div style={{ display: "flex" }}>
         <Hero
-          title="Automated AI code reviews for any stack"
-          subTitle="Build more reliable software with AI companion. AI is also trained to detect lazy developers who do nothing and just complain on Twitter.">
-          <Button size="lg" variant="default" color="gray">
-            Book a demo
+          title="Production-ready Mantine UI Templates for developers"
+          subTitle="A growing collection of hand-crafted & responsive Mantine UI templates ready to drop into your React project.">
+          <Button
+            size="lg"
+            component="a"
+            href="https://github.com/jc21/mantine-v7-design-templates"
+            target="_blank">
+            Contribute
           </Button>
-          <Button size="lg">Purchase a license</Button>
         </Hero>
       </div>
       <Space h="xl" />

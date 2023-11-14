@@ -47,7 +47,8 @@
     flex-direction: column;
   }
 
-  button {
+  button,
+  a {
     &:not(:first-of-type) {
       margin-left: var(--mantine-spacing-md);
     }

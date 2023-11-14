@@ -55,6 +55,12 @@ const pages = [
     description: "Use cards to show data in unique ways",
     to: "/cards",
   },
+  {
+    icon: FiMinimize,
+    title: "Error Pages",
+    description: "Nice error pages for your app",
+    to: "/errors",
+  },
 ];
 
 function SiteHeader() {
@@ -95,7 +101,7 @@ function SiteHeader() {
 
   return (
     <header className={classes.header}>
-      <Container size="md" className={classes.inner}>
+      <Container size="lg" className={classes.inner}>
         <UnstyledButton
           onClick={(e) => {
             e.preventDefault();
