@@ -14,9 +14,9 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				sh 'docker run --rm -v "$(pwd):/app" -w /app node:18 yarn install'
-				sh 'docker run --rm -v "$(pwd):/app" -w /app node:18 yarn lint'
-				sh 'docker run --rm -v "$(pwd):/app" -w /app node:18 yarn build'
+				sh 'docker run --rm -v "$(pwd):/app" -w /app node:20 yarn install'
+				sh 'docker run --rm -v "$(pwd):/app" -w /app node:20 yarn lint'
+				sh 'docker run --rm -v "$(pwd):/app" -w /app node:20 yarn build'
 			}
 		}
 		stage('Deploy') {
