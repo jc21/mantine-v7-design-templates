@@ -4,6 +4,7 @@ import { Center, Container, Loader } from "@mantine/core";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { SiteHeader } from "src/components";
+import { ErrorNotFound } from "src/components/ErrorNotFound";
 
 const Layouts = lazy(() => import("./pages/Layouts"));
 const Cards = lazy(() => import("./pages/Cards"));
@@ -26,6 +27,7 @@ function Router() {
       <Container size="lg">
         <Suspense fallback={Load}>
           <Routes>
+            <Route path="*" element={<ErrorNotFound />} />
             <Route path="/layouts" element={<Layouts />} />
             <Route path="/cards" element={<Cards />} />
             <Route path="/forms" element={<Forms />} />
