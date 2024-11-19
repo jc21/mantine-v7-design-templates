@@ -32,14 +32,7 @@ pipeline {
 		always {
 			sh 'echo Reverting ownership'
 			sh 'docker run --rm -v "$(pwd):/app" jc21/ci-tools chown -R "$(id -u):$(id -g)" /app'
-		}
-		success {
-			juxtapose event: 'success'
-			sh 'figlet "SUCCESS"'
-		}
-		failure {
-			juxtapose event: 'failure'
-			sh 'figlet "FAILURE"'
+			printResult(true)
 		}
 	}
 }
