@@ -1,10 +1,11 @@
 import { lazy, Suspense } from "react";
 
 import { Center, Container, Loader } from "@mantine/core";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { SiteHeader } from "src/components";
 
+const Layouts = lazy(() => import("./pages/Layouts"));
 const Cards = lazy(() => import("./pages/Cards"));
 const Lists = lazy(() => import("./pages/Lists"));
 const Forms = lazy(() => import("./pages/Forms"));
@@ -25,6 +26,7 @@ function Router() {
       <Container size="lg">
         <Suspense fallback={Load}>
           <Routes>
+            <Route path="/layouts" element={<Layouts />} />
             <Route path="/cards" element={<Cards />} />
             <Route path="/forms" element={<Forms />} />
             <Route path="/lists" element={<Lists />} />

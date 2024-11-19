@@ -1,28 +1,29 @@
 import {
   Box,
+  Burger,
   Center,
   Container,
   Group,
-  Burger,
   HoverCard,
-  useMantineColorScheme,
-  useComputedColorScheme,
-  UnstyledButton,
   SimpleGrid,
   Text,
   ThemeIcon,
+  UnstyledButton,
   rem,
+  useComputedColorScheme,
+  useMantineColorScheme,
   useMantineTheme,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import {
-  FiMoon,
-  FiSun,
-  FiCode,
   FiAlertTriangle,
   FiBook,
-  FiMinimize,
   FiChevronDown,
+  FiCode,
+  FiLayout,
+  FiMinimize,
+  FiMoon,
+  FiSun,
 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
@@ -31,6 +32,12 @@ import { Logo } from "src/components";
 import classes from "./SiteHeader.module.css";
 
 const pages = [
+  {
+    icon: FiLayout,
+    title: "Layouts",
+    description: "Layouts for your app or site",
+    to: "/layouts",
+  },
   {
     icon: FiCode,
     title: "Menus",

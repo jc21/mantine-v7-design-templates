@@ -1,4 +1,4 @@
-import { useState, ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 import { CodeHighlight } from "@mantine/code-highlight";
 import {
@@ -11,9 +11,10 @@ import {
   Text,
   rem,
 } from "@mantine/core";
-import { FiCode, FiEye, FiExternalLink, FiHash } from "react-icons/fi";
+import { FiCode, FiExternalLink, FiEye, FiHash } from "react-icons/fi";
 
 import classes from "./Example.module.css";
+import { OptInRender } from "./OptInRender";
 
 export interface ExampleItem {
   title: string;
@@ -23,6 +24,7 @@ export interface ExampleItem {
   sourceCss?: string;
   sourceCssFilename?: string;
   isMantineUI?: boolean;
+  optinRender?: boolean;
 }
 
 interface Props {
@@ -78,7 +80,7 @@ function Example({ item }: Props) {
       </Group>
       <Tabs value={value}>
         <Tabs.Panel value="preview" className={classes.preview}>
-          {item.component}
+          {item.optinRender ? <OptInRender item={item} /> : item.component}
         </Tabs.Panel>
         <Tabs.Panel value="code" className={classes.code}>
           <Tabs defaultValue="component" classNames={classes}>
