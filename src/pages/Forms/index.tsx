@@ -1,6 +1,7 @@
 import { Title } from "@mantine/core";
 
 import { Example, ExampleItem } from "src/components";
+import { ForgotPassword } from "src/examples/Forms/ForgotPassword";
 import { LoginForm } from "src/examples/Forms/LoginForm";
 import { RegisterForm } from "src/examples/Forms/RegisterForm";
 
@@ -22,6 +23,16 @@ const items: ExampleItem[] = [
     sourceCss: (await import("src/examples/Forms/RegisterForm.module.css?raw"))
       .default,
     sourceCssFilename: "RegisterForm.module.css",
+  },
+  {
+    title: "Forgot Password",
+    component: <ForgotPassword />,
+    source: (await import("src/examples/Forms/ForgotPassword.tsx?raw")).default,
+    sourceFilename: "ForgotPassword.tsx",
+    sourceCss: (
+      await import("src/examples/Forms/ForgotPassword.module.css?raw")
+    ).default,
+    sourceCssFilename: "ForgotPassword.module.css",
   },
 ];
 
