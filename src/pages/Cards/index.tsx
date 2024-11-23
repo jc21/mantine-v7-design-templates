@@ -25,13 +25,13 @@ const items: ExampleItem[] = [
   {
     title: "Stats Group",
     component: <StatsGroup data={statsGroupData} />,
-    source: (await import("src/examples/Cards/StatsGroup.tsx?raw")).default,
-    sourceFilename: "StatsGroup.tsx",
-    // sourceCss: (
-    //   await import("src/examples/ErrorPages/StatsGroup.module.css?raw")
-    // ).default,
-    // sourceCssFilename: "NotFoundImage.module.css",
-    // isMantineUI: true,
+    files: [
+      {
+        source: (await import("src/examples/Cards/StatsGroup.tsx?raw")).default,
+        sourceFilename: "StatsGroup.tsx",
+        type: "tsx",
+      },
+    ],
   },
 ];
 

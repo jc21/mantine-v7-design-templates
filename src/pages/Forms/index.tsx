@@ -9,30 +9,56 @@ const items: ExampleItem[] = [
   {
     title: "Login",
     component: <LoginForm />,
-    source: (await import("src/examples/Forms/LoginForm.tsx?raw")).default,
-    sourceFilename: "LoginForm.tsx",
-    sourceCss: (await import("src/examples/Forms/LoginForm.module.css?raw"))
-      .default,
-    sourceCssFilename: "LoginForm.module.css",
+    files: [
+      {
+        source: (await import("src/examples/Forms/LoginForm.tsx?raw")).default,
+        sourceFilename: "LoginForm.tsx",
+        type: "tsx",
+      },
+      {
+        source: (await import("src/examples/Forms/LoginForm.module.css?raw"))
+          .default,
+        sourceFilename: "LoginForm.module.css",
+        type: "css",
+      },
+    ],
   },
   {
     title: "Register",
     component: <RegisterForm />,
-    source: (await import("src/examples/Forms/RegisterForm.tsx?raw")).default,
-    sourceFilename: "RegisterForm.tsx",
-    sourceCss: (await import("src/examples/Forms/RegisterForm.module.css?raw"))
-      .default,
-    sourceCssFilename: "RegisterForm.module.css",
+    files: [
+      {
+        source: (await import("src/examples/Forms/RegisterForm.tsx?raw"))
+          .default,
+        sourceFilename: "RegisterForm.tsx",
+        type: "tsx",
+      },
+      {
+        source: (await import("src/examples/Forms/RegisterForm.module.css?raw"))
+          .default,
+        sourceFilename: "RegisterForm.module.css",
+        type: "css",
+      },
+    ],
   },
   {
     title: "Forgot Password",
     component: <ForgotPassword />,
-    source: (await import("src/examples/Forms/ForgotPassword.tsx?raw")).default,
-    sourceFilename: "ForgotPassword.tsx",
-    sourceCss: (
-      await import("src/examples/Forms/ForgotPassword.module.css?raw")
-    ).default,
-    sourceCssFilename: "ForgotPassword.module.css",
+    files: [
+      {
+        source: (await import("src/examples/Forms/ForgotPassword.tsx?raw"))
+          .default,
+        sourceFilename: "ForgotPassword.tsx",
+        type: "tsx",
+      },
+      {
+        source: (
+          await import("src/examples/Forms/ForgotPassword.module.css?raw")
+        ).default,
+        sourceFilename: "ForgotPassword.module.css",
+        type: "css",
+      },
+    ],
   },
 ];
 

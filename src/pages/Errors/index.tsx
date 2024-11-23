@@ -11,59 +11,104 @@ const items: ExampleItem[] = [
   {
     title: "404 Page with Image",
     component: <NotFoundImage />,
-    source: (await import("src/examples/ErrorPages/NotFoundImage.tsx?raw"))
-      .default,
-    sourceFilename: "NotFoundImage.tsx",
-    sourceCss: (
-      await import("src/examples/ErrorPages/NotFoundImage.module.css?raw")
-    ).default,
-    sourceCssFilename: "NotFoundImage.module.css",
+    files: [
+      {
+        source: (await import("src/examples/ErrorPages/NotFoundImage.tsx?raw"))
+          .default,
+        sourceFilename: "NotFoundImage.tsx",
+        type: "tsx",
+      },
+      {
+        source: (
+          await import("src/examples/ErrorPages/NotFoundImage.module.css?raw")
+        ).default,
+        sourceFilename: "NotFoundImage.module.css",
+        type: "css",
+      },
+    ],
     isMantineUI: true,
   },
   {
     title: "404 Page",
     component: <NotFound />,
-    source: (await import("src/examples/ErrorPages/NotFound.tsx?raw")).default,
-    sourceFilename: "NotFound.tsx",
-    sourceCss: (await import("src/examples/ErrorPages/NotFound.module.css?raw"))
-      .default,
-    sourceCssFilename: "NotFound.module.css",
+    files: [
+      {
+        source: (await import("src/examples/ErrorPages/NotFound.tsx?raw"))
+          .default,
+        sourceFilename: "NotFound.tsx",
+        type: "tsx",
+      },
+      {
+        source: (
+          await import("src/examples/ErrorPages/NotFound.module.css?raw")
+        ).default,
+        sourceFilename: "NotFound.module.css",
+        type: "css",
+      },
+    ],
     isMantineUI: true,
   },
   {
     title: "404 as background image",
     component: <NotFoundBackground />,
-    source: (await import("src/examples/ErrorPages/NotFoundBackground.tsx?raw"))
-      .default,
-    sourceFilename: "NotFoundBackground.tsx",
-    sourceCss: (
-      await import("src/examples/ErrorPages/NotFoundBackground.module.css?raw")
-    ).default,
-    sourceCssFilename: "NotFoundBackground.module.css",
+    files: [
+      {
+        source: (
+          await import("src/examples/ErrorPages/NotFoundBackground.tsx?raw")
+        ).default,
+        sourceFilename: "NotFoundBackground.tsx",
+        type: "tsx",
+      },
+      {
+        source: (
+          await import(
+            "src/examples/ErrorPages/NotFoundBackground.module.css?raw"
+          )
+        ).default,
+        sourceFilename: "NotFoundBackground.module.css",
+        type: "css",
+      },
+    ],
     isMantineUI: true,
   },
   {
     title: "500 Page",
     component: <ServerError />,
-    source: (await import("src/examples/ErrorPages/ServerError.tsx?raw"))
-      .default,
-    sourceFilename: "ServerError.tsx",
-    sourceCss: (
-      await import("src/examples/ErrorPages/ServerError.module.css?raw")
-    ).default,
-    sourceCssFilename: "ServerError.module.css",
+    files: [
+      {
+        source: (await import("src/examples/ErrorPages/ServerError.tsx?raw"))
+          .default,
+        sourceFilename: "ServerError.tsx",
+        type: "tsx",
+      },
+      {
+        source: (
+          await import("src/examples/ErrorPages/ServerError.module.css?raw")
+        ).default,
+        sourceFilename: "ServerError.module.css",
+        type: "css",
+      },
+    ],
     isMantineUI: true,
   },
   {
     title: "503 Page",
     component: <ServerOverload />,
-    source: (await import("src/examples/ErrorPages/ServerOverload.tsx?raw"))
-      .default,
-    sourceFilename: "ServerOverload.tsx",
-    sourceCss: (
-      await import("src/examples/ErrorPages/ServerOverload.module.css?raw")
-    ).default,
-    sourceCssFilename: "ServerOverload.module.css",
+    files: [
+      {
+        source: (await import("src/examples/ErrorPages/ServerOverload.tsx?raw"))
+          .default,
+        sourceFilename: "ServerOverload.tsx",
+        type: "tsx",
+      },
+      {
+        source: (
+          await import("src/examples/ErrorPages/ServerOverload.module.css?raw")
+        ).default,
+        sourceFilename: "ServerOverload.module.css",
+        type: "css",
+      },
+    ],
     isMantineUI: true,
   },
 ];

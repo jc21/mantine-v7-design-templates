@@ -7,10 +7,18 @@ const items: ExampleItem[] = [
   {
     title: "Hero",
     component: <Hero />,
-    source: (await import("src/examples/Hero.tsx?raw")).default,
-    sourceFilename: "Hero.tsx",
-    sourceCss: (await import("src/examples/Hero.module.css?raw")).default,
-    sourceCssFilename: "Hero.module.css",
+    files: [
+      {
+        source: (await import("src/examples/Hero.tsx?raw")).default,
+        sourceFilename: "Hero.tsx",
+        type: "tsx",
+      },
+      {
+        source: (await import("src/examples/Hero.module.css?raw")).default,
+        sourceFilename: "Hero.module.css",
+        type: "css",
+      },
+    ],
   },
 ];
 
